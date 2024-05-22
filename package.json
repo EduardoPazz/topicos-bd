@@ -26,6 +26,8 @@
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "eslint-config-prettier": "latest",
+    "prettier": "latest",
     "typescript": "latest"
   }
 }
