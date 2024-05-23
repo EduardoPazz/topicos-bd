@@ -8,24 +8,18 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
-    mode: "light",
+    mode: "dark",
+    primary: {
+      main: "#A5FEDE",
+    },
+    background: {
+      default: "#222222",
+      paper: "#383838",
+    },
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
   },
-  components: {
-    MuiAlert: {
-      styleOverrides: {
-        root: ({ ownerState }) => ({
-          ...(ownerState.severity === "info" && {
-            backgroundColor: "#60a5fa",
-          }),
-        }),
-      },
-    },
-  },
 });
-
-export default theme;
