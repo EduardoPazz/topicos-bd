@@ -12,7 +12,7 @@ import * as React from "react";
 import { ReactNode } from "react";
 
 const NavigationContent = () => (
-  <>
+  <Box p={2} bgcolor="background.paper" height="100%" borderRadius={4}>
     <Box pl={2} pt={2} pb={4}>
       <Typography variant="h1" fontSize={24}>
         ReforestAI
@@ -35,19 +35,17 @@ const NavigationContent = () => (
         </ListItem>
       ))}
     </List>
-  </>
+  </Box>
 );
 
-export function Navigation({ children }: { children: ReactNode }) {
-  return (
-    <Box display="flex" height="100%">
-      <Box p={2} bgcolor="background.paper" height="100%">
-        <NavigationContent />
-      </Box>
-
-      <Box component="main" p={5}>
-        {children}
-      </Box>
+export const Navigation = ({ children }: { children: ReactNode }) => (
+  <Box display="flex" height="100%">
+    <Box p={2} height="100%">
+      <NavigationContent />
     </Box>
-  );
-}
+
+    <Box component="main" p={5}>
+      {children}
+    </Box>
+  </Box>
+);
