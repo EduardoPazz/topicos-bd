@@ -14,7 +14,7 @@ export const NavigationContent = () => (
       </Typography>
     </Box>
     <List>
-      {Array.from(ROUTES.entries()).map(([path, { title, Icon }]) => (
+      {ROUTES.map(({ path, title, Icon }) => (
         <ListItem key={path}>
           <Link
             href={path}
