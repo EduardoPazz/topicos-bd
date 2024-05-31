@@ -7,7 +7,7 @@ export const Navigation = ({ children }: { children: ReactNode }) => (
     <Box p={2} height="100%">
       <NavigationContent />
     </Box>
-    <Box component="main" p={5}>
+    <Box component="main" p={5} width="100%">
       {children}
     </Box>
   </Box>
