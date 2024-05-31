@@ -7,7 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
 
 export const NavigationContent = () => (
-  <Box p={2} bgcolor="background.paper" height="100%" borderRadius={4}>
+  <Box p={1} bgcolor="background.paper" height="100%" borderRadius={4}>
     <Box pl={2} pt={2} pb={4}>
       <Typography variant="h1" fontSize={24} sx={{ fontWeight: 900 }}>
         ReforestAI

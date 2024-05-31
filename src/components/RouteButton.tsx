@@ -19,6 +19,9 @@ export const RouteButton = ({
     <ListItemIcon>
       <Icon color="primary" />
     </ListItemIcon>
-    <ListItemText primary={title} />
+    <ListItemText
+      primary={title}
+      primaryTypographyProps={{ width: "max-content" }}
+    />
   </ListItemButton>
 );
