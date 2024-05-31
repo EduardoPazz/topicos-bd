@@ -7,17 +7,17 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { ReactNode } from "react";
 
-export default function RootLayout(props: { children: ReactNode }) {
-  return (
-    <html lang="pt-BR" className={styles.fullHeight}>
-      <body className={styles.fullHeight}>
-        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Navigation>{props.children}</Navigation>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
-      </body>
-    </html>
-  );
-}
+const RootLayout = (props: { children: ReactNode }) => (
+  <html lang="pt-BR" className={styles.fullHeight}>
+    <body className={styles.fullHeight}>
+      <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Navigation>{props.children}</Navigation>
+        </ThemeProvider>
+      </AppRouterCacheProvider>
+    </body>
+  </html>
+);
+
+export default RootLayout;
