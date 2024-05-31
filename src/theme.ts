@@ -14,6 +14,9 @@ export const theme = createTheme({
     primary: {
       main: "#A5FEDE",
     },
+    secondary: {
+      main: "#676565",
+    },
     background: {
       default: "#222222",
       paper: "#383838",
@@ -21,5 +24,14 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        :root {
+            overscroll-behavior: none;
+        }
+      `,
+    },
   },
 });
