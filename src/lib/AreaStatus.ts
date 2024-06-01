@@ -1,4 +1,4 @@
-export enum Status {
+export enum AreaStatus {
   GOOD,
   BAD,
   UNDEFINED,

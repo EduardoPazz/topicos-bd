@@ -1,23 +1,23 @@
-import { Status } from "@/lib/Status";
+import { AreaStatus } from "@/lib/AreaStatus";
 import Typography from "@mui/material/Typography";
 
 const messages = {
-  [Status.GOOD]: (
+  [AreaStatus.GOOD]: (
     <Typography align="center" color="success.main">
       Não apresenta desmatamento
     </Typography>
   ),
-  [Status.BAD]: (
+  [AreaStatus.BAD]: (
     <Typography align="center" color="error.main">
       Grandes indícios de desmatamento
     </Typography>
   ),
-  [Status.UNDEFINED]: (
+  [AreaStatus.UNDEFINED]: (
     <Typography align="center" color="text.secondary">
       Sem informações suficientes
     </Typography>
   ),
 };
 
-export const StatusMessage = (props: { status: Status }) =>
+export const StatusMessage = (props: { status: AreaStatus }) =>
   messages[props.status];

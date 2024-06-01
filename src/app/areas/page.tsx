@@ -1,8 +1,22 @@
-import { Area } from "@/components/Area";
-import { Status } from "@/lib/Status";
+import { AreaSkeleton } from "@/components/AreaSkeleton";
 import { Box } from "@mui/material";
+import dynamic from "next/dynamic";
 
-export default function Areas() {
+const Areas = dynamic(
+  () => import("@/components/Areas").then((mod) => mod.Areas),
+  {
+    ssr: false,
+    loading: () => (
+      <>
+        <AreaSkeleton />
+        <AreaSkeleton />
+        <AreaSkeleton />
+      </>
+    ),
+  },
+);
+
+export default function AreasPage() {
   return (
     <Box
       display="grid"
@@ -10,15 +24,7 @@ export default function Areas() {
       justifyContent="space-evenly"
       gap={4}
     >
-      {Array.from(Array(1)).map((_, index) => (
-        <Area key={index} name={"nome do arquivo"} status={Status.GOOD} />
-      ))}
-      {Array.from(Array(1)).map((_, index) => (
-        <Area key={index} name={"nome do arquivo"} status={Status.BAD} />
-      ))}
-      {Array.from(Array(7)).map((_, index) => (
-        <Area key={index} name={"nome do arquivo"} status={Status.UNDEFINED} />
-      ))}
+      <Areas />
     </Box>
   );
 }

@@ -1,7 +1,3 @@
-export default function Page() {
-  return (
-    <div>
-      <p>Upload page </p>
-    </div>
-  );
+export default function Upload() {
+  return "Upload Page";
 }

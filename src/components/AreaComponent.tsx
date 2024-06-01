@@ -1,22 +1,17 @@
 import { StatusMessage } from "@/components/StatusMessage";
-import { Status } from "@/lib/Status";
+import { Area } from "@/lib/types";
 import { Button, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 
-export const Area = ({ name, status }: { name: string; status: Status }) => (
+export const AreaComponent = ({ area }: { area: Area }) => (
   <Stack spacing={2}>
     <Stack>
-      <Image
-        src="https://picsum.photos/300/200"
-        alt="random image"
-        width={300}
-        height={200}
-      />
+      <Image src={area.imgSrc} alt="random image" width={300} height={200} />
       <Typography align="center" mt={1}>
-        {name}
+        {area.name}
       </Typography>
-      <StatusMessage status={status} />
+      <StatusMessage status={area.status} />
     </Stack>
     <Stack spacing={1}>
       <Button

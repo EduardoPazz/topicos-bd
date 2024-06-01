@@ -18,7 +18,8 @@
     "@mui/material-nextjs": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "swr": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
