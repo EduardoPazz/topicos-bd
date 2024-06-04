@@ -1,10 +1,10 @@
 import { StatusMessage } from "@/components/StatusMessage";
-import { Area } from "@/lib/types";
+import { AreaDTO } from "@/lib/types";
 import { Button, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 
-export const AreaComponent = ({ area }: { area: Area }) => (
+export const AreaComponent = ({ area }: { area: AreaDTO }) => (
   <Stack spacing={2}>
     <Stack>
       <Image src={area.imgSrc} alt="random image" width={300} height={200} />

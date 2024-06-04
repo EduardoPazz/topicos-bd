@@ -1,7 +1,7 @@
 "use client";
 
 import { AreaComponent } from "@/components/AreaComponent";
-import { useReadIDB } from "@/lib/useReadIDB";
+import { useReadIDB } from "@/lib/IndexedDB/useReadIDB";
 
 /**
  * It uses IndexedDB to fetch the areas.
@@ -10,7 +10,14 @@ import { useReadIDB } from "@/lib/useReadIDB";
 export const Areas = () => (
   <>
     {useReadIDB().map((area) => (
-      <AreaComponent key={area.name} area={area} />
+      <AreaComponent
+        key={area.name}
+        area={{
+          name: area.name,
+          status: area.status,
+          imgSrc: URL.createObjectURL(area.img),
+        }}
+      />
     ))}
   </>
 );

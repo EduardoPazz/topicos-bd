@@ -4,6 +4,12 @@ import { ReactComponentLike } from "prop-types";
 export interface Area {
   name: string;
   status: AreaStatus;
+  img: File;
+}
+
+export interface AreaDTO {
+  name: string;
+  status: AreaStatus;
   imgSrc: string;
 }
 
