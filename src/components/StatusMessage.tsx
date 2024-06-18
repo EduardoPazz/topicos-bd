@@ -1,23 +1,30 @@
-import { AreaStatus } from "@/lib/AreaStatus";
 import Typography from "@mui/material/Typography";
 
+import { AreaStatus } from "@/lib/AreaStatus";
+
 const messages = {
-  [AreaStatus.GOOD]: (
+  [AreaStatus.FOREST]: (
     <Typography align="center" color="success.main">
       Não apresenta desmatamento
     </Typography>
   ),
-  [AreaStatus.BAD]: (
+  [AreaStatus.DEFORESTATION]: (
     <Typography align="center" color="error.main">
-      Grandes indícios de desmatamento
+      Apresenta indícios de desmatamento
     </Typography>
   ),
-  [AreaStatus.UNDEFINED]: (
+  [AreaStatus.CLOUD]: (
     <Typography align="center" color="text.secondary">
-      Sem informações suficientes
+      Imagem coberta por núvens
     </Typography>
   ),
 };
 
-export const StatusMessage = (props: { status: AreaStatus }) =>
-  messages[props.status];
+export const DefaultStatusMessage = () => (
+  <Typography align="center" color="text.secondary">
+    Sem informações suficientes
+  </Typography>
+);
+
+export const StatusMessage = ({ status }: { status: AreaStatus }) =>
+  messages[status];

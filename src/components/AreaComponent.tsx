@@ -1,13 +1,15 @@
 "use client";
 
-import { StatusMessage } from "@/components/StatusMessage";
+import {
+  DefaultStatusMessage,
+  StatusMessage,
+} from "@/components/StatusMessage";
 import { deleteIDB } from "@/lib/IndexedDB/deleteIDB";
 import { Area } from "@/lib/types";
 import { Button, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { useState } from "react";
-import { AreaStatus } from "@/lib/AreaStatus";
 import { useAnalyzeArea } from "@/lib/useAnalyzeArea";
 
 export const AreaComponent = ({ area: areaProp }: { area: Area }) => {
@@ -31,7 +33,11 @@ export const AreaComponent = ({ area: areaProp }: { area: Area }) => {
         <Typography align="center" mt={1}>
           {area.name}
         </Typography>
-        <StatusMessage status={area.status} />
+        {area.status ? (
+          <StatusMessage status={area.status} />
+        ) : (
+          <DefaultStatusMessage />
+        )}
       </Stack>
       <Stack spacing={1}>
         <Button
@@ -43,9 +49,7 @@ export const AreaComponent = ({ area: areaProp }: { area: Area }) => {
           sx={{ textTransform: "none" }}
           onClick={() => trigger()}
         >
-          {area.status === AreaStatus.UNDEFINED
-            ? "Analisar"
-            : "Refazer análise"}
+          {area.status ? "Analisar" : "Refazer análise"}
         </Button>
         <Button
           size="small"
