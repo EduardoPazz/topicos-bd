@@ -7,12 +7,6 @@ export interface Area {
   img: File;
 }
 
-export interface AreaDTO {
-  name: string;
-  status: AreaStatus;
-  imgSrc: string;
-}
-
 export interface RouteEntry {
   path: string;
   title: string;

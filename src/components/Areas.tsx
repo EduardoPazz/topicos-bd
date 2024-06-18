@@ -10,14 +10,7 @@ import { useReadIDB } from "@/lib/IndexedDB/useReadIDB";
 export const Areas = () => (
   <>
     {useReadIDB().map((area) => (
-      <AreaComponent
-        key={area.name}
-        area={{
-          name: area.name,
-          status: area.status,
-          imgSrc: URL.createObjectURL(area.img),
-        }}
-      />
+      <AreaComponent key={area.name} area={area} />
     ))}
   </>
 );

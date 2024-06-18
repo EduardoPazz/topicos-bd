@@ -1,6 +1,7 @@
 "use client";
 
 import { writeIDB } from "@/lib/IndexedDB/writeIDB";
+import { AreaStatus } from "@/lib/AreaStatus";
 
 const inputId = "image-upload";
 
@@ -20,7 +21,7 @@ export default function Upload() {
             Array.from(e.target.files).map((file) => ({
               name: file.name,
               img: file,
-              status: Math.floor(Math.random() * 3),
+              status: AreaStatus.UNDEFINED,
             })),
           );
         }}
